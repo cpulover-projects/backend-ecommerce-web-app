@@ -5,16 +5,23 @@
 - REST Repository
 - MySQL Driver
 - Lombok
-- Spring Boot DevTools (Optional)
 
 ### Database Setup - Hibernate/JPA
 1. Create database for Entity 
 [[create-database.sql]()]
 2. Configure JDBC connection and Hibernate dialect in 
-[[application.properties]()]
+[application.properties]()
 3. Create Entity classes 
 [[Product]()] [[ProductCategory]()]
 
+### Spring Data JPA/REST
+1. Create Repositories 
+[[ProductRepository]()] [[ProductCategoryRepository]()]
+   - Use @RepositoryRestResource to customize JSON entry and API endpoint
+2. Customer base path for REST API in 
+[application.properties]()
+3. Disable certain HTTP methods for certain Entities: create Spring Data REST Configuration with @Configuration implements RepositoryRestConfigurer 
+[[DataRestConfig]()] 
 
 ## Notes
 - @CreationTimestamp & @UpdateTimestamp 
