@@ -27,7 +27,7 @@
 - @CreationTimestamp & @UpdateTimestamp 
 [[Product]()]
 - Using @Data on both Entity classes in the OneToMany relationship may cause bug -> Use @Data for one side, @Getter and @Setter for the other.
-
+- Add @CrossOrigin to Repositories to accept calls from web browser script for the origin (Angular app)
 
 
 

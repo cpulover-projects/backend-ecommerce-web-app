@@ -11,7 +11,7 @@ import org.springframework.http.HttpMethod;
 public class DataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        HttpMethod[] theUnsupportedActions={HttpMethod.DELETE,HttpMethod.POST,HttpMethod.PUT};
+        HttpMethod[] theUnsupportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT};
 
         //disable HTTP methods for Product: PUT, POST and DELETE
         config.getExposureConfiguration()
