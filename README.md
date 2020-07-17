@@ -1,4 +1,4 @@
-## Back-end Development Process
+# Back-end Development Process
 
 ### Spring Boot Setup
 - Spring Data JPA
@@ -22,10 +22,15 @@
    [Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 2. Customer base path for REST API in 
 [application.properties]()
-3. Disable certain HTTP methods for certain Entities: create Spring Data REST Configuration with @Configuration implements RepositoryRestConfigurer 
+3. Create Spring Data REST Configuration with @Configuration implements RepositoryRestConfigurer for custom configuration 
 [[DataRestConfig]()] 
+   - Disable certain HTTP methods for certain Entities
+   - Expose Entity id fields for the API 
+     - Inject JPA entity manager (recommend by the constructor): to retrieve list of all Entity types
+     - Alternative method: declare field by uppercase ```Id``` instead of ```id```. However, this is not a documented feature -> not recommend
 
-## Notes
+
+### Notes
 - @CreationTimestamp & @UpdateTimestamp 
 [[Product]()]
 - Using @Data on both Entity classes in the OneToMany relationship may cause bug -> Use @Data for one side, @Getter and @Setter for the other.
