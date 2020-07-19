@@ -20,7 +20,7 @@
    - Use @RepositoryRestResource to customize JSON entry and API endpoint
    - Create custom query methods by 
    [Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
-2. Customer base path for REST API in 
+2. Customize base path for REST API in 
 [application.properties]()
 3. Create Spring Data REST Configuration with @Configuration implements RepositoryRestConfigurer for custom configuration 
 [[DataRestConfig]()] 
