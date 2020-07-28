@@ -7,16 +7,16 @@
 - Lombok
 
 ### Database Setup - Hibernate/JPA
-1. Create database for Entity 
-[[create-database.sql]()]
+1. Create database for Entities
+[[create-database.sql]()] [[countries-and-states.sql]()]
 2. Configure JDBC connection and Hibernate dialect in 
 [application.properties]()
-3. Create Entity classes 
-[[Product]()] [[ProductCategory]()]
+3. Create JPA Entity classes 
+[[Product]()] [[ProductCategory]()] [[Country]()] [[State]()]
 
 ### Spring Data JPA/REST
 1. Create Repositories 
-[[ProductRepository]()] [[ProductCategoryRepository]()]
+[[ProductRepository]()] [[ProductCategoryRepository]()] [[CountryRepository]()] [[StateRepository]()]
    - Use @RepositoryRestResource to customize JSON entry and API endpoint
    - Create custom query methods by 
    [Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
@@ -31,18 +31,20 @@
 
 
 ### Notes
-- @CreationTimestamp & @UpdateTimestamp 
+- [Hibernate] @CreationTimestamp & @UpdateTimestamp 
 [[Product]()]
-- Using @Data on both Entity classes in the OneToMany relationship may cause bug -> Use @Data for one side, @Getter and @Setter for the other.
-- Add @CrossOrigin to Repositories to accept calls from web browser script for the origin (Angular app)
-- Use @Query to define a custom query method in the JPA Repository
-- JPA Repository method starts with ````findBy...```` will be exposed by Data REST as endpoint ```/search/findBy...``` 
+- [SpringDataJPA&Lombok]Using @Data on both Entity classes in the OneToMany relationship may cause bug -> Use @Data for one side, @Getter and @Setter for the other.
+- [SpringDataJPA] Add @CrossOrigin to Repositories to accept calls from web browser script for the origin (Angular app)
+- [SpringDataJPA] Use @Query to define a custom query method in the JPA Repository
+- [SpringDataJPA] JPA Repository method starts with ````findBy...```` will be exposed by Data REST as endpoint ```/search/findBy...``` 
 [[ProductRepository]()] 
-- REST API returns 20 entries per page by default
+- [SpringDataREST] Spring Data REST API supports pagination
+  - Returns 20 entries per page by default
+  - Endpoint: ```<entities>?page=<number>&size=<number```
+s- When working with Spring Data REST we should actually use @Param instead of @RequestParam.
 
 
-
-
+        
 
 
 
